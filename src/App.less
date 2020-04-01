@@ -2,12 +2,14 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   margin:0;
   padding:0;
-  background-color:#e3e3e3;
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png");
 }
 
 .App{
   padding:10px;
+  margin: 1rem;
 }
+//Header
 .header{
   width:100%;
   text-align: center;
@@ -19,8 +21,9 @@ body{
     padding:15px;
     border-radius: 20px;
     cursor: pointer;
-    
+    border:1px solid black;
     &:hover{
+      border:0;
       color:#fff;
       background: rgb(111,108,153);
       background: linear-gradient(90deg, rgba(111,108,153,1) 17%, rgba(233,37,65,1) 100%);
@@ -32,7 +35,49 @@ body{
   }
   
 }
-.App {
-  margin: 1rem;
-  
+
+//Sidebar
+.sidebar{
+  height:100%;
+  position: fixed;
+  top:0;
+  left:0px;
+  min-width: 20px;
+  padding: 10px;
+  color:#fff;
+  background: #000000d5;
+  .head{
+    display:block;
+    font-size:13px;
+    text-transform: uppercase;
+    font-weight: 200;
+    border:1px solid #fff;
+    padding:10px;
+    margin-bottom:10px;
+    cursor: pointer;
+    &:hover{
+      background:#e3e3e3;
+      color:#202020;
+    }
+    &:active{
+      color:#fff;
+      background: rgb(111,108,153);
+      background: linear-gradient(90deg, rgba(111,108,153,1) 17%, rgba(233,37,65,1) 100%);
+    }
+  }
+}
+
+.ele{
+  font-size: 14px;
+  ul{
+   margin-top:10px;
+   list-style-type: none;
+   background:#202020;
+   cursor: pointer;
+   li{
+     &:hover{
+       text-decoration: underline;
+     }
+   }
+  }
 }
