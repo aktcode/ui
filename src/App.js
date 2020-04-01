@@ -3,7 +3,6 @@ import {hot} from 'react-hot-loader';
 import "./App.less";
 import Form from "./components/forms/form.js"
 import Header from "./components/header.js"
-import addScript from './hooks/useScript.js'
 
 class App extends Component{
   constructor(props){
