@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/aktcode/ui/issues"
   },
-  "homepage": "https://github.com/aktcode/ui#readme",
+  "homepage": "http://aktcode.github.io/ui",
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
@@ -29,6 +31,7 @@
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
     "file-loader": "^6.0.0",
+    "gh-pages": "^2.2.0",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
