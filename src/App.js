@@ -1,7 +1,6 @@
 import React, { Component} from "react";
 import {hot} from 'react-hot-loader';
 import "./App.less";
-import Form from "./components/forms/form.js"
 import Header from "./components/header.js"
 import Sidebar from "./components/sidebar.js"
 
@@ -18,7 +17,6 @@ class App extends Component{
       <div className="App">
         <Header />
         <Sidebar />
-        <Form />
       </div>
     );
   }
