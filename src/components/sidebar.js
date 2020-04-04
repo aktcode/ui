@@ -6,23 +6,22 @@ class Sidebar extends Component{
         super(props);
         this.state = {
             formVariant : 1,
-            forms: [1,2,3]
+            forms: [1 , 2, 3]
         }
-
-        this.handleFormSelection = this.handleFormSelection.bind(this);
     }
 
     componentDidMount(){
-
     }
 
-    handleFormSelection(){
-        
+    handleFormSelection(index){
+        this.setState({
+            formVariant : index
+        })
     }
 
     render(){
         const forms = this.state.forms.map(function(item){
-            return <li key={item.toString()}> {item} </li>;
+            return <li id="forms" key={item.toString()}> {item} </li>;
             });
         return(
             <>
@@ -31,7 +30,10 @@ class Sidebar extends Component{
                     <div className="ele">
                         <span className="eleHead">Login</span>
                         <ul>
-                            {forms}
+                            { this.state.forms.map((item) => {
+                                return(<li id={item == this.state.formVariant ? 'active' : ''} onClick={this.handleFormSelection.bind(this,item)} key={item}>{item}</li>)
+                            })
+                            }
                         </ul>
                     </div>
                 {this.handleFormSelection}
@@ -41,5 +43,7 @@ class Sidebar extends Component{
         )
     }
 }
+
+
 
 export default Sidebar;
