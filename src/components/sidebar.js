@@ -1,12 +1,14 @@
-import React, { Component} from "react";
+import React, { Component} from "react"
 import Form from "./forms/form.js"
+import Data from '../data/main.js'
 
 class Sidebar extends Component{
     constructor(props){
         super(props);
         this.state = {
             formVariant : 1,
-            forms: [1 , 2, 3]
+            forms: [1 ,2, 3],
+            formInfo: Data.forms.get(1)
         }
     }
 
@@ -15,14 +17,12 @@ class Sidebar extends Component{
 
     handleFormSelection(index){
         this.setState({
-            formVariant : index
+            formVariant : index,
+            formInfo: Data.forms.get(parseInt(index))
         })
     }
 
     render(){
-        const forms = this.state.forms.map(function(item){
-            return <li id="forms" key={item.toString()}> {item} </li>;
-            });
         return(
             <>
                 <div className="sidebar">
@@ -38,12 +38,10 @@ class Sidebar extends Component{
                     </div>
                 {this.handleFormSelection}
                 </div>
-                <Form variant={this.state.formVariant}/>
+                <Form variant={this.state.formVariant} formInfo={this.state.formInfo} />
             </>
         )
     }
 }
-
-
 
 export default Sidebar;
