@@ -21,9 +21,9 @@ class Form extends Component{
                 <div className={"form" + this.props.variant}> 
                     <span id="head">Log<span id="in">in</span></span>
                     <br />
-                    <input type="text" id="user" placeholder="user"></input>
+                    <input type="text" id="inp1" placeholder="User"></input>
                     <br />
-                    <input type="password" id="pass" placeholder="password"></input>
+                    <input type="password" id="inp2" placeholder="Password"></input>
                     <br />
                     <span id="submit">Submit</span>
                 </div>

@@ -2,7 +2,7 @@
 const Data = {
     "forms" : new Map([
         [ 1 , "<i>A very simple form<br>Nothing fancy here</i>" ],
-        [ 2 , "Not so simple form" ]
+        [ 2 , "<i>Dark theme<br>Just like me :)</i>" ]
     ])
   
 }

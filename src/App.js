@@ -14,10 +14,10 @@ class App extends Component{
   }
   render(){
     return(
-      <div className="App">
-        <Header />
-        <Sidebar />
-      </div>
+        <div className="App" style={{backgroundColor: this.props.bgColor}}>
+          {/* <Header /> */}
+          <Sidebar />
+        </div>
     );
   }
 }
