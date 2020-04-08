@@ -7,7 +7,7 @@ class Sidebar extends Component{
         super(props);
         this.state = {
             formVariant : 1,
-            forms: [1 ,2],
+            forms: [1 ,2, 3],
             formInfo: Data.forms.get(1)
         }
     }
@@ -36,7 +36,6 @@ class Sidebar extends Component{
                             }
                         </ul>
                     </div>
-                {this.handleFormSelection}
                 </div>
                 <Form variant={this.state.formVariant} formInfo={this.state.formInfo} />
             </>
