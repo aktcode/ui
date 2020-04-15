@@ -28,7 +28,7 @@ input:focus {
   font-weight: 500;
   font-size: 2em;
 
-  span{
+  span.test{
     background-color: @white;
     padding:15px;
     border-radius: 20px;
@@ -50,6 +50,7 @@ input:focus {
 
 //Sidebar
 .sidebar{
+  z-index: 100;
   height:100%;
   position: fixed;
   top:0;
@@ -81,6 +82,9 @@ input:focus {
   #active{
     text-decoration: underline;
     font-weight: bold;
+    border-right: 5px solid @white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     color: @white;
   }
 }
@@ -89,17 +93,49 @@ input:focus {
   font-size: 14px;
   ul{
    margin-top:10px;
+   padding: 5px;
    list-style-type: none;
-   background: @black2;
+   
    cursor: pointer;
    li{
      color: @light;
      cursor: pointer;
+     &:hover{
+        background: @black2;
+     }
    }
   }
 }
-
-//form
+.info{
+  position: fixed;
+  right:10px;
+  top: 10px;
+  width:20%;
+  background-color: #313131;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  color:@white;
+  padding:10px;
+  min-height: 20px;
+  font-size: 14px;
+  text-align: left;
+  #aboutText{
+    width:80%;
+    display: inline-block;
+  }
+  #about{
+    display: inline-block;
+    font-size:10px;
+    text-transform: uppercase;
+    position: absolute;
+    color:#dbdf19; 
+    right: 10px;
+    background-color:#202020;
+    padding: 3px;
+    border-radius: 4px;
+  }
+}
+//form componenents 
+//Current scheme is form1,form2,... Need to find a better solution, like making a base template style
 #submit{
   cursor: pointer;
   display: block;
@@ -111,47 +147,14 @@ input:focus {
   top:20%;
   margin: auto;
   left:40%;
-  .info{
-    position: fixed;
-    right:10px;
-    top: 10px;
-    width:20%;
-    background-color: #313131;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
-    color:@white;
-    padding:10px;
-    min-height: 20px;
-    font-size: 14px;
-    #aboutText{
-      width:80%;
-      display: inline-block;
-    }
-    #about{
-      display: inline-block;
-      font-size:10px;
-      text-transform: uppercase;
-      position: absolute;
-      color:#dbdf19; 
-      right: 10px;
-      background-color:#202020;
-      padding: 3px;
-      border-radius: 4px;
-    }
-  }
- 
-
   .form1{
     max-width: max-content;
     background-color: @white;
     padding: 30px 50px 60px 20px;
-    // border:3px solid #202020;
-    
     #head{
       display: block;
       font-size: 50px;
       margin-bottom: 20px;
-      
-      // text-decoration: underline;
     }
     input{
       margin-bottom: 5px;
@@ -264,19 +267,128 @@ input:focus {
       }
     }
     #submit{
-      
       margin-top: 10px;
       font-size: 20px;
       max-width: max-content;
       padding: 10px;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
       transition: all 0.5s;
-      &:hover{
-        
-      }
     }
   }
-  
-  
-  
+}
+
+
+//Animation for sliding to left
+@keyframes slideInFromLeft {
+  0% {
+    width:0px;
+    opacity: 1;
+  }
+  100% {
+    width:inherit;
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    width:0px;
+    opacity: 1;
+  }
+  100% {
+    width:inherit;
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes slideInFromLeft {
+  0% {
+    width:0px;
+    opacity: 1;
+  }
+  100% {
+    width:inherit;
+    opacity: 0.2;
+  }
+}
+
+//Card container, part of "other" series
+.cardContainer{
+  padding-top: 10%;
+  padding-left: 5%;
+  .card{
+    .bgCont{
+      display: block;
+      background-repeat: no-repeat;
+      background-position: right;
+      background-position-x: 200px;
+      background-position-y: -80px;
+      background-size: 20em;
+      opacity: 0.2;
+      width: 100%;
+      height: 100%;
+      animation: 1s ease-out 0s 1 slideInFromLeft;
+      position: absolute;
+    }
+    display: inline-block;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    height: 300px;
+    background: linear-gradient(19deg, #4c487f, #2d7b34);
+    background-size: 200% 200%;
+
+    -webkit-animation: cardBackground 7s ease infinite;
+    -moz-animation: cardBackground 7s ease infinite;
+    animation: cardBackground 7s ease infinite;
+
+    @-webkit-keyframes cardBackground {
+        0%{background-position:50% 0%}
+        50%{background-position:51% 100%}
+        100%{background-position:50% 0%}
+    }
+    @-moz-keyframes cardBackground {
+        0%{background-position:50% 0%}
+        50%{background-position:51% 100%}
+        100%{background-position:50% 0%}
+    }
+    @keyframes cardBackground {
+        0%{background-position:50% 0%}
+        50%{background-position:51% 100%}
+        100%{background-position:50% 0%}
+    }
+    
+    
+    overflow: hidden;
+    position: relative;
+    color: @white;
+    .top-right{
+      font-weight: bold;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      opacity: 0.8;
+    }
+   
+    .number{ 
+        position: absolute;
+        left: 20px;
+        bottom: 90px;
+        font-size: 30px;
+        font-weight: bold;
+        .expiry{
+          display: block;
+          font-size: 12px;
+          position: absolute;
+          right: 0px;
+          border-radius: 4px;
+          font-weight: initial;
+        }
+    }
+    .name{
+        position: absolute;
+        left: 20px;
+        bottom: 40px;
+        text-transform: capitalize;
+        font-size: 16px;
+    }
+  }
 }
