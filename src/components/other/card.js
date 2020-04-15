@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import CardLogo from "../../../public/assets/images/card_bg.svg";
+import Data from '../../data/main.js';
 class Card extends Component{
     render(){
         const bgContStyle = {
@@ -11,10 +12,10 @@ class Card extends Component{
                     <span className="bgCont" style={bgContStyle}></span>
                     <span className="top-right">Bank</span>
                     <span className="details">
-                        <span className="number">3141 5926 5358 9793
-                        <span className="expiry">12/23</span>
+                        <span className="number">{Data.dummy.get("cardNumber")}
+                        <span className="expiry">{Data.dummy.get("cardExpiry")}</span>
                         </span>
-                        <span className="name">Abhishek Kumar Tiwari</span>
+                        <span className="name">{Data.dummy.get("name")}</span>
                         {/* <img src={CardLogo} /> */}
                     </span>
                     

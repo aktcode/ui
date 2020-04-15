@@ -7,8 +7,14 @@ const Data = {
     ]),
     "others" : new Map([
         ["Card", "Minimalistic card with initial and looping animations"]
+    ]),
+    "dummy" : new Map([
+        [ "name" , "Abhishek Kumar Tiwari" ],
+        [ "cardNumber" , "3141 5926 5358 9793" ],
+        [ "cardExpiry" , "12/26" ]
     ])
-  
 }
+
+
 
 export default Data;

@@ -134,7 +134,8 @@ input:focus {
     border-radius: 4px;
   }
 }
-//form
+//form componenents 
+//Current scheme is form1,form2,... Need to find a better solution, like making a base template style
 #submit{
   cursor: pointer;
   display: block;
@@ -146,21 +147,14 @@ input:focus {
   top:20%;
   margin: auto;
   left:40%;
-  
- 
-
   .form1{
     max-width: max-content;
     background-color: @white;
     padding: 30px 50px 60px 20px;
-    // border:3px solid #202020;
-    
     #head{
       display: block;
       font-size: 50px;
       margin-bottom: 20px;
-      
-      // text-decoration: underline;
     }
     input{
       margin-bottom: 5px;
@@ -273,19 +267,18 @@ input:focus {
       }
     }
     #submit{
-      
       margin-top: 10px;
       font-size: 20px;
       max-width: max-content;
       padding: 10px;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
       transition: all 0.5s;
-      &:hover{
-        
-      }
     }
   }
 }
+
+
+//Animation for sliding to left
 @keyframes slideInFromLeft {
   0% {
     width:0px;
@@ -296,12 +289,32 @@ input:focus {
     opacity: 0.2;
   }
 }
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    width:0px;
+    opacity: 1;
+  }
+  100% {
+    width:inherit;
+    opacity: 0.2;
+  }
+}
+@-moz-keyframes slideInFromLeft {
+  0% {
+    width:0px;
+    opacity: 1;
+  }
+  100% {
+    width:inherit;
+    opacity: 0.2;
+  }
+}
+
+//Card container, part of "other" series
 .cardContainer{
-  // border: 1px solid black;
   padding-top: 10%;
   padding-left: 5%;
   .card{
-    
     .bgCont{
       display: block;
       background-repeat: no-repeat;
@@ -320,28 +333,24 @@ input:focus {
     padding: 10px;
     width: 500px;
     height: 300px;
-    // background: rgb(72,24,75);
-    // background: linear-gradient(90deg, rgba(72,24,75,0.43881302521008403) 15%, rgba(233,37,65,1) 100%);
-    
-    
     background: linear-gradient(19deg, #4c487f, #2d7b34);
     background-size: 200% 200%;
 
-    -webkit-animation: AnimationName 7s ease infinite;
-    -moz-animation: AnimationName 7s ease infinite;
-    animation: AnimationName 7s ease infinite;
+    -webkit-animation: cardBackground 7s ease infinite;
+    -moz-animation: cardBackground 7s ease infinite;
+    animation: cardBackground 7s ease infinite;
 
-    @-webkit-keyframes AnimationName {
+    @-webkit-keyframes cardBackground {
         0%{background-position:50% 0%}
         50%{background-position:51% 100%}
         100%{background-position:50% 0%}
     }
-    @-moz-keyframes AnimationName {
+    @-moz-keyframes cardBackground {
         0%{background-position:50% 0%}
         50%{background-position:51% 100%}
         100%{background-position:50% 0%}
     }
-    @keyframes AnimationName {
+    @keyframes cardBackground {
         0%{background-position:50% 0%}
         50%{background-position:51% 100%}
         100%{background-position:50% 0%}
@@ -359,8 +368,7 @@ input:focus {
       opacity: 0.8;
     }
    
-    .number{
-        
+    .number{ 
         position: absolute;
         left: 20px;
         bottom: 90px;
@@ -371,7 +379,6 @@ input:focus {
           font-size: 12px;
           position: absolute;
           right: 0px;
-          
           border-radius: 4px;
           font-weight: initial;
         }
@@ -383,8 +390,5 @@ input:focus {
         text-transform: capitalize;
         font-size: 16px;
     }
-  
-    
   }
-  
 }
