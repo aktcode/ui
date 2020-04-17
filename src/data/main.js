@@ -6,7 +6,8 @@ const Data = {
         [ 3 , "Some white on white" ]
     ]),
     "others" : new Map([
-        ["Card", "Minimalistic card with initial and looping animations"]
+        ["Card", "Minimalistic card with initial and looping animations"],
+        ["Phone", "A phone, I guess?"]
     ]),
     "dummy" : new Map([
         [ "name" , "Abhishek Kumar Tiwari" ],

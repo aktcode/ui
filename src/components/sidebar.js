@@ -11,7 +11,7 @@ class Sidebar extends Component{
             formVariant : 1,
             forms: [1 ,2, 3],
             formInfo: Data.forms.get(1),
-            others: ['Card'],
+            others: ['Card' , "Phone"],
             othersVariant: 'Card',
             othersInfo: Data.others.get('Card')
         }
