@@ -1,4 +1,5 @@
 import React, { Component} from "react";
+import Info from "../info.js";
 
 class Form extends Component{
     constructor(props){
@@ -7,13 +8,7 @@ class Form extends Component{
             descriptionAvailable : true
         }
     }
-    //Read info from src/data/main, using dangerouslySetInnerHTML to allow basic html markups in the data file itself
-    setInfo(){
-        if(this.props.formInfo){
-            return {__html: this.props.formInfo};
-        }
-        return {__html: "None"};
-    }
+ 
     
     render(){
         return(
@@ -27,13 +22,8 @@ class Form extends Component{
                     <br />
                     <span id="submit">Submit</span>
                 </div>
-
-                <div className={"info " +(this.props.formInfo ? '' : 'disNone')}>
-                    <div id="aboutText">
-                        <span dangerouslySetInnerHTML={this.setInfo()}></span>
-                    </div>
-                    <div id="about">About</div>
-                </div>
+                
+                <Info infoContent={this.props.formInfo} />
             </div>
         )
     }
