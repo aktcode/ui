@@ -9,6 +9,9 @@ const Data = {
         ["Card", "Minimalistic card with initial and looping animations"],
         ["Phone", "A phone, I guess?"]
     ]),
+    "search" : new Map([
+        [ 1 , "A simple and plain search"]
+    ]),
     "dummy" : new Map([
         [ "name" , "Abhishek Kumar Tiwari" ],
         [ "cardNumber" , "3141 5926 5358 9793" ],

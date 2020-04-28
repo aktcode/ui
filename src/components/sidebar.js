@@ -2,7 +2,7 @@ import React, { Component} from "react"
 import Form from "./forms/form.js"
 import Other from "./other.js"
 import Data from '../data/main.js'
-
+import Search from "./search/search.js"
 class Sidebar extends Component{
     constructor(props){
         super(props);
@@ -13,7 +13,10 @@ class Sidebar extends Component{
             formInfo: Data.forms.get(1),
             others: ['Card' , "Phone"],
             othersVariant: 'Card',
-            othersInfo: Data.others.get('Card')
+            othersInfo: Data.others.get('Card'),
+            search: [1],
+            searchVariant: 1,
+            searchInfo: Data.search.get(1)
         }
     }
 
@@ -35,6 +38,13 @@ class Sidebar extends Component{
             othersInfo: Data.others.get(index)
         })
     }
+    handleSearchSelection(index){
+        this.setState({
+            othersVariant : index,
+            stageOccupier: 'search',
+            othersInfo: Data.search.get(index)
+        })
+    }
 
     render(){
         let stage;
@@ -44,6 +54,9 @@ class Sidebar extends Component{
                 break;
             case 'other':
                 stage =  <Other variant={this.state.othersVariant} othersInfo={this.state.othersInfo}/>
+                break;
+            case 'search':
+                stage = <Search variant={this.state.searchVariant} searchInfo={this.state.searchInfo} />   
         }
         return(
             <>
@@ -56,6 +69,12 @@ class Sidebar extends Component{
                                 return(<li id={(item == this.state.formVariant && this.state.stageOccupier == 'form')  ? 'active' : ''} onClick={this.handleFormSelection.bind(this,item)} key={item}>{item}</li>)
                             })
                             }
+                        </ul>
+                        <span className="eleHead">Search</span>
+                        <ul>
+                            { this.state.search.map((item) => {
+                                return(<li id={(item == this.state.searchVariant && this.state.stageOccupier == 'search') ? 'active' : ''} onClick={this.handleSearchSelection.bind(this,item)} key={item}>{item}</li>)
+                            })}
                         </ul>
                         <span className="eleHead">Others</span>
                         <ul>
