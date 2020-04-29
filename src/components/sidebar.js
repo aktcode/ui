@@ -3,6 +3,13 @@ import Form from "./forms/form.js"
 import Other from "./other.js"
 import Data from '../data/main.js'
 import Search from "./search/search.js"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+
 class Sidebar extends Component{
     constructor(props){
         super(props);
@@ -61,7 +68,7 @@ class Sidebar extends Component{
         return(
             <>
                 <div className="sidebar">
-                    <span className="head">Elements</span>
+                    <Link to="/"><span className="head">Elements</span></Link>
                     <div className="ele">
                         <span className="eleHead">Login</span>
                         <ul>
