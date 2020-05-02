@@ -12,6 +12,11 @@ const Data = {
     "search" : new Map([
         [ 1 , "A simple and plain search"]
     ]),
+    //Whether to show search icon by deafault, setting false will show the icon when use clicks on input
+    "defaultSearchIcon" : new Map([
+        [ 1 , true],
+        [ 2 , false]
+    ]),
     "dummy" : new Map([
         [ "name" , "Abhishek Kumar Tiwari" ],
         [ "cardNumber" , "3141 5926 5358 9793" ],
