@@ -402,8 +402,6 @@ input:focus {
         50%{background-position:51% 100%}
         100%{background-position:50% 0%}
     }
-    
-    
     overflow: hidden;
     position: relative;
     color: @white;
@@ -453,7 +451,6 @@ input:focus {
   .phone{
     box-shadow: 5px 1px 5px rgba(0, 0, 0, 0.7);
     animation: phoneRot 3s ease-out;
-    
     @keyframes cardBackground {
       0%{filter: grayscale(50%);}
       50%{filter: grayscale(30%);}
@@ -552,7 +549,8 @@ input:focus {
 .searchContainer{
   padding-top: 10%;
   text-align: center;
-  .search{
+  .search1{
+    transition: all 0.5s;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     display: inline-block;
     min-width: 500px;
@@ -580,6 +578,44 @@ input:focus {
         background-repeat: no-repeat;
       }
     }
-    
+  }
+  .search2{
+    transition: all 0.5s;
+    box-shadow: 0 1px 2px rgba(46, 110, 175, 0.5);
+    display: inline-block;
+    min-width: 200px;
+    max-width: max-content;
+    padding: 7px;
+    background-color: @white;
+    border-radius: 50px;
+    .box{
+      display: inline-block;
+      position: relative;
+      
+      input{
+        border-radius: 50px;
+        background-color : rgb(46, 110, 175);
+        border:0;
+        padding: 20px;
+        font-size: 25px;
+        color: @white;
+        &::placeholder{
+          color: @white;
+        }
+      }
+
+      .icon-search{
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        right: 0;
+        background-position-y: 9px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      
+    }
   }
 }

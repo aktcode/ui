@@ -21,7 +21,7 @@ class Sidebar extends Component{
             others: ['Card' , "Phone"],
             othersVariant: 'Card',
             othersInfo: Data.others.get('Card'),
-            search: [1],
+            search: [1, 2],
             searchVariant: 1,
             searchInfo: Data.search.get(1)
         }
@@ -47,9 +47,9 @@ class Sidebar extends Component{
     }
     handleSearchSelection(index){
         this.setState({
-            othersVariant : index,
+            searchVariant : index,
             stageOccupier: 'search',
-            othersInfo: Data.search.get(index)
+            searchInfo: Data.search.get(index)
         })
     }
 
