@@ -70,21 +70,21 @@ class Sidebar extends Component{
                 <div className="sidebar">
                     <Link to="/"><span className="head">Elements</span></Link>
                     <div className="ele">
-                        <span className="eleHead">Login</span>
-                        <ul>
+                        <span className={"eleHead "+(this.state.stageOccupier == 'form' ? 'active' : '')} onClick={() => this.setState({stageOccupier: 'form'})}>Login</span>
+                        <ul className={this.state.stageOccupier != 'form' ? 'disNone' : ''}>
                             { this.state.forms.map((item) => {
                                 return(<li id={(item == this.state.formVariant && this.state.stageOccupier == 'form')  ? 'active' : ''} onClick={this.handleFormSelection.bind(this,item)} key={item}>{item}</li>)
                             })
                             }
                         </ul>
-                        <span className="eleHead">Search</span>
-                        <ul>
+                        <span className={"eleHead "+(this.state.stageOccupier == 'search' ? 'active' : '')} onClick={() => this.setState({stageOccupier: 'search'})}>Search</span>
+                        <ul className={this.state.stageOccupier != 'search' ? 'disNone' : ''}>
                             { this.state.search.map((item) => {
                                 return(<li id={(item == this.state.searchVariant && this.state.stageOccupier == 'search') ? 'active' : ''} onClick={this.handleSearchSelection.bind(this,item)} key={item}>{item}</li>)
                             })}
                         </ul>
-                        <span className="eleHead">Others</span>
-                        <ul>
+                        <span className={"eleHead "+(this.state.stageOccupier == 'other' ? 'active' : '')} onClick={() => this.setState({stageOccupier: 'other'})}>Others</span>
+                        <ul className={this.state.stageOccupier != 'other' ? 'disNone' : ''}>
                             { this.state.others.map((item) => {
                                 return(<li id={(item == this.state.othersVariant && this.state.stageOccupier == 'other') ? 'active' : ''} onClick={this.handleOtherSelection.bind(this,item)} key={item}>{item}</li>)
                             })
