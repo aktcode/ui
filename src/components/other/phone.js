@@ -29,7 +29,7 @@ class Phone extends Component{
                     })}
                     </span>
                 </span>
-                <span class="swipe-up">
+                <span className="swipe-up">
                     <span>Swipe up</span></span>
                 </div>
             </div>
