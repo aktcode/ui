@@ -10,7 +10,8 @@ const Data = {
         ["Phone", "A phone, I guess?"]
     ]),
     "search" : new Map([
-        [ 1 , "A simple and plain search"]
+        [ 1 , "A simple and plain search"],
+        [ 2 , "Round Blues"]
     ]),
     //Whether to show search icon by deafault, setting false will show the icon when use clicks on input
     "defaultSearchIcon" : new Map([

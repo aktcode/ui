@@ -550,6 +550,7 @@ input:focus {
   padding-top: 10%;
   text-align: center;
   .search1{
+    transition: all 0.5s;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     display: inline-block;
     min-width: 500px;
@@ -579,28 +580,32 @@ input:focus {
     }
   }
   .search2{
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    transition: all 0.5s;
+    box-shadow: 0 1px 2px rgba(46, 110, 175, 0.5);
     display: inline-block;
     min-width: 200px;
     max-width: max-content;
-    padding: 5px;
+    padding: 7px;
     background-color: @white;
-    
+    border-radius: 50px;
     .box{
       display: inline-block;
       position: relative;
       
       input{
+        border-radius: 50px;
+        background-color : rgb(46, 110, 175);
         border:0;
-        padding: 15px;
-        font-size: 20px;
+        padding: 20px;
+        font-size: 25px;
+        color: @white;
         &::placeholder{
-          text-align: center;
-          color: @black2;
+          color: @white;
         }
       }
 
       .icon-search{
+        display: none;
         cursor: pointer;
         position: absolute;
         width: 30px;
